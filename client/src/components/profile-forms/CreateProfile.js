@@ -8,33 +8,31 @@ import "../auth/Auth.css";
 import "../dashboard/Dashboard.css";
 
 const CreateProfile = () => {
-    const history = useHistory()
+  const history = useHistory();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
-    company: "",
-    website: "",
-    location: "",
     bio: "",
     status: "",
-    skills: "",
-    youtube: "",
+    company: "",
+    location: "",
+    website: "",
     facebook: "",
-    twitter: "",
     instagram: "",
     linkedin: "",
+    twitter: "",
+    youtube: "",
   });
   const {
-    company,
-    website,
-    location,
     bio,
     status,
-    skills,
-    youtube,
+    company,
+    location,
+    website,
     facebook,
-    twitter,
     instagram,
+    twitter,
     linkedin,
+    youtube,
   } = formData;
 
   const onChange = (e) =>
@@ -70,18 +68,6 @@ const CreateProfile = () => {
             placeholder="Status"
             name="status"
             value={status}
-            onChange={(e) => onChange(e)}
-          />
-        </div>
-        <div className="create-profile-input">
-          <small className="smallDesc">
-            <em>ex; Logo, Branding, Brand identity</em>
-          </small>
-          <input
-            type="text"
-            placeholder="Skills"
-            name="skills"
-            value={skills}
             onChange={(e) => onChange(e)}
           />
         </div>

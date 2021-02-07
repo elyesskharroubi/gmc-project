@@ -36,7 +36,6 @@ router.post(
     auth,
     [
       check("status", "Status is required.").not().isEmpty(),
-      check("skills", "Skills is required.").not().isEmpty(),
     ],
   ],
   async (req, res) => {
@@ -51,7 +50,6 @@ router.post(
       location,
       bio,
       status,
-      skills,
       youtube,
       facebook,
       twitter,
@@ -67,7 +65,6 @@ router.post(
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
-    if (skills) profileFields.skills = skills.map((skill) => skill.trim());
 
     //   build social object
     profileFields.social = {};
