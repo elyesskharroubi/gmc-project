@@ -1,4 +1,4 @@
-.noProfile {
+.profileInfo {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -8,6 +8,26 @@
   width: fit-content;
   margin: 0 auto;
   border-radius: 6px;
+}
+
+.userName {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.userStatus {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.socialLink:hover {
+  opacity: 0.8;
 }
 
 .smallDesc {
