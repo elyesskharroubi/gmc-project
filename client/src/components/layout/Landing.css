@@ -1,0 +1,100 @@
+.cover {
+  background: url(../../img/background2.png) no-repeat center center fixed;
+  background-size: cover;
+}
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.landing-sub,
+.landing-title,
+.cta-btn {
+  z-index: 2;
+}
+
+.landing-sub {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.landing-title {
+  font-family: "Merriweather", serif;
+  font-size: 47px;
+  margin-bottom: 40px;
+}
+
+.cta-btn {
+  padding: 14px 46px;
+  font-size: 21px;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 4px;
+}
+
+.cta-btn:hover {
+  box-shadow: 1px 1px 15px 3px rgba(222, 255, 245, 0.5);
+  background: #80ffdb;
+  border: 1px solid #1f5747;
+  opacity: 0.85;
+  color: #1f5747;
+}
+
+.cta-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(206, 255, 240, 0.6),
+    transparent
+  );
+  transition: all 650ms;
+}
+.cta-btn:hover:before {
+  left: 100%;
+}
+
+@media screen and (max-width: 1380px) {
+  .landing-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing-sub {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  .landing-title {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  .cta-btn {
+    font-size: 18px;
+  }
+  .landing-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
