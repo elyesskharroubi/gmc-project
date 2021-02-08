@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 import facebook from "../../img/facebook.svg";
 import instagram from "../../img/insta.svg";
@@ -8,9 +7,7 @@ import twitter from "../../img/twitter.svg";
 import website from "../../img/website.svg";
 import youtube from "../../img/youtube.svg";
 
-const SocialLinks = () => {
-  const Profile = useSelector((state) => state.profile);
-  const { profile } = Profile;
+const SocialLinks = ({ profile }) => {
   return (
     <>
       {profile.website && (

@@ -18,6 +18,9 @@ const ProfileSchema = new mongoose.Schema({
   bio: {
     type: String,
   },
+  location: {
+    type: String,
+  },
 
   experience: [
     {

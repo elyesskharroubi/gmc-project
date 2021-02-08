@@ -1,13 +1,16 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-import { createProfile } from "../../actions/profile";
+import { createProfile, getCurrentProfile } from "../../actions/profile";
 
 import "../auth/Auth.css";
 import "../dashboard/Dashboard.css";
 
-const CreateProfile = () => {
+const EditProfile = () => {
+  const Profile = useSelector((state) => state.profile);
+  const { profile, loading } = Profile;
+
   const history = useHistory();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
@@ -22,6 +25,23 @@ const CreateProfile = () => {
     twitter: "",
     youtube: "",
   });
+
+  useEffect(() => {
+    dispatch(getCurrentProfile());
+    setFormData({
+      bio: loading || !profile.bio ? "" : profile.bio,
+      status: loading || !profile.status ? "" : profile.status,
+      company: loading || !profile.company ? "" : profile.company,
+      location: loading || !profile.location ? "" : profile.location,
+      website: loading || !profile.website ? "" : profile.website,
+      facebook: loading || !profile.social ? "" : profile.social.facebook,
+      instagram: loading || !profile.social ? "" : profile.social.instagram,
+      linkedin: loading || !profile.social ? "" : profile.social.linkedin,
+      twitter: loading || !profile.social ? "" : profile.social.twitter,
+      youtube: loading || !profile.social ? "" : profile.social.youtube,
+    });
+  }, [loading]);
+
   const {
     bio,
     status,
@@ -40,7 +60,7 @@ const CreateProfile = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(createProfile(formData, history));
+    dispatch(createProfile(formData, history, true));
   };
   return (
     <section className="container">
@@ -179,4 +199,4 @@ const CreateProfile = () => {
   );
 };
 
-export default CreateProfile;
+export default EditProfile;

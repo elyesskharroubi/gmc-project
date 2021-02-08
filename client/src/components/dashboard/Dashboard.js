@@ -2,6 +2,7 @@ import React, { Fragment, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getCurrentProfile } from "../../actions/profile";
+import DashboardActions from "./DashboardActions";
 
 import SocialLinks from "./SocialLinks";
 import "./Dashboard.css";
@@ -21,7 +22,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <section className="container dash">
+    <section className="dash">
       {loading && profile === null ? (
         <Spinner />
       ) : (
@@ -29,7 +30,7 @@ const Dashboard = () => {
           <h1 className="dash-title">Welcome {user && user.firstName}</h1>
           <div className="dashboardContainer">
             {profile !== null ? (
-              <Fragment>
+              <div className="dashContent">
                 <div className="profileInfo">
                   <img
                     src={user && user.avatar}
@@ -44,12 +45,16 @@ const Dashboard = () => {
                   <p className="userName">
                     {user && user.firstName} {user && user.lastName}
                   </p>
-                  <p className="userStatus">{profile.status}</p>
+                  <p className="user">{profile.status}</p>
+                  <p className="user">{profile.location}</p>
                   <div className="social">
-                    <SocialLinks />
+                    <SocialLinks profile={profile} />
                   </div>
                 </div>
-              </Fragment>
+                <div className="dashboard-content">
+                  <DashboardActions />
+                </div>
+              </div>
             ) : (
               <Fragment>
                 <p style={{ marginBottom: "20px" }}>

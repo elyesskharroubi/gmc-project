@@ -5,9 +5,29 @@
   flex-direction: column;
   padding: 20px;
   background-color: #1d1d1d;
-  width: fit-content;
-  margin: 0 auto;
+  /* width: fit-content; */
+  /* margin: 0 auto; */
   border-radius: 6px;
+}
+
+.dashContent {
+  display: flex;
+  gap: 20px;
+}
+
+.dashboard-content {
+  padding: 20px;
+  background-color: #1d1d1d;
+  border-radius: 6px;
+  flex: 2;
+}
+
+.dash-buttons {
+  float: right;
+}
+
+.dash-buttons a {
+  margin-left: 10px;
 }
 
 .userName {
@@ -15,9 +35,9 @@
   font-size: 18px;
 }
 
-.userStatus {
-  font-size: 16px;
-  margin: 10px 0;
+.user,
+.userName {
+  margin-bottom: 20px;
 }
 
 .social {
@@ -73,3 +93,9 @@
     width: 90%;
   }
 }
+
+/* .dashContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */

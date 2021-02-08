@@ -46,6 +46,8 @@ body {
 
 .dash {
   padding-top: 100px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .dash-title {
