@@ -15,11 +15,10 @@ const AddEducation = () => {
     from: "",
     current: false,
     to: "",
-    description: "",
   });
 
   const [toDateDisabled, toggleDisabled] = useState(false);
-  const { school, degree, from, current, to, description } = formData;
+  const { school, degree, from, current, to } = formData;
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
   const onSubmit = (e) => {
@@ -102,20 +101,6 @@ const AddEducation = () => {
             disabled={toDateDisabled ? "disabled" : ""}
           />
         </div>
-        <div className="create-profile-input">
-          <small className="smallDesc">
-            <em>Job Description</em>
-          </small>
-          <textarea
-            name="description"
-            placeholder="Description"
-            cols="30"
-            rows="5"
-            value={description}
-            onChange={(e) => onChange(e)}
-          ></textarea>
-        </div>
-
         <button
           className="register-btn"
           type="submit"

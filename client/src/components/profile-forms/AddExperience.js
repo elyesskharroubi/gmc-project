@@ -16,11 +16,10 @@ const AddExperience = () => {
     from: "",
     current: false,
     to: "",
-    description: "",
   });
 
   const [toDateDisabled, toggleDisabled] = useState(false);
-  const { title, company, location, from, current, to, description } = formData;
+  const { title, company, location, from, current, to } = formData;
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
   const onSubmit = (e) => {
@@ -115,20 +114,6 @@ const AddExperience = () => {
             disabled={toDateDisabled ? "disabled" : ""}
           />
         </div>
-        <div className="create-profile-input">
-          <small className="smallDesc">
-            <em>Job Description</em>
-          </small>
-          <textarea
-            name="description"
-            placeholder="Description"
-            cols="30"
-            rows="5"
-            value={description}
-            onChange={(e) => onChange(e)}
-          ></textarea>
-        </div>
-
         <button
           className="register-btn"
           type="submit"

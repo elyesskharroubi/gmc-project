@@ -44,9 +44,6 @@ const ProfileSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
       },
-      description: {
-        type: String,
-      },
     },
   ],
   education: [
@@ -69,9 +66,6 @@ const ProfileSchema = new mongoose.Schema({
       current: {
         type: Boolean,
         default: false,
-      },
-      description: {
-        type: String,
       },
     },
   ],

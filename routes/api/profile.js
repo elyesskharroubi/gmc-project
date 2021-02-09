@@ -169,7 +169,6 @@ router.put(
       from,
       to,
       current,
-      description,
     } = req.body;
 
     const newExp = {
@@ -179,7 +178,6 @@ router.put(
       from,
       to,
       current,
-      description,
     };
 
     try {
@@ -244,7 +242,6 @@ router.put(
       from,
       to,
       current,
-      description,
     };
 
     try {
