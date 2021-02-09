@@ -32,12 +32,7 @@ router.get("/me", auth, async (req, res) => {
 // @access      Private
 router.post(
   "/",
-  [
-    auth,
-    [
-      check("status", "Status is required.").not().isEmpty(),
-    ],
-  ],
+  [auth, [check("status", "Status is required.").not().isEmpty()]],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -61,13 +56,13 @@ router.post(
     const profileFields = {};
     profileFields.user = req.user.id;
     if (company) profileFields.company = company;
-    if (website) profileFields.website = website;
     if (location) profileFields.location = location;
     if (bio) profileFields.bio = bio;
     if (status) profileFields.status = status;
 
     //   build social object
     profileFields.social = {};
+    if (website) profileFields.social.website = website;
     if (youtube) profileFields.social.youtube = youtube;
     if (twitter) profileFields.social.twitter = twitter;
     if (facebook) profileFields.social.facebook = facebook;
@@ -232,7 +227,6 @@ router.put(
     [
       check("school", "School is required").not().isEmpty(),
       check("degree", "Degree is required").not().isEmpty(),
-      check("fieldofstudy", "Field of study is required").not().isEmpty(),
       check("from", "From date is required").not().isEmpty(),
     ],
   ],
@@ -242,20 +236,11 @@ router.put(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const {
-      school,
-      degree,
-      fieldofstudy,
-      from,
-      to,
-      current,
-      description,
-    } = req.body;
+    const { school, degree, from, to, current, description } = req.body;
 
     const newEdu = {
       school,
       degree,
-      fieldofstudy,
       from,
       to,
       current,

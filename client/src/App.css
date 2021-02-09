@@ -31,8 +31,8 @@ body {
 }
 
 .primaryBtn {
-  background-color: #80ffdb;
-  color: #1f5747;
+  background-color: #3b3b3b;
+  color: #fff;
   padding: 6px 8px;
   text-decoration: none;
   border-radius: 6px;
@@ -41,13 +41,27 @@ body {
 }
 
 .primaryBtn:hover {
-  background-color: #7be2c5;
+  background-color: #575757;
 }
 
 .dash {
   padding-top: 100px;
   width: 80%;
   margin: 0 auto;
+}
+@media screen and (max-width: 768px) {
+  .dash {
+    width: 90%;
+  }
+  .primaryBtn {
+    background-color: none;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 50%;
+    outline: none;
+    transition: all 150ms ease-in-out;
+  }
 }
 
 .dash-title {

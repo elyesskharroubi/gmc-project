@@ -33,13 +33,14 @@ const EditProfile = () => {
       status: loading || !profile.status ? "" : profile.status,
       company: loading || !profile.company ? "" : profile.company,
       location: loading || !profile.location ? "" : profile.location,
-      website: loading || !profile.website ? "" : profile.website,
+      website: loading || !profile.social ? "" : profile.social.website,
       facebook: loading || !profile.social ? "" : profile.social.facebook,
       instagram: loading || !profile.social ? "" : profile.social.instagram,
       linkedin: loading || !profile.social ? "" : profile.social.linkedin,
       twitter: loading || !profile.social ? "" : profile.social.twitter,
       youtube: loading || !profile.social ? "" : profile.social.youtube,
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading]);
 
   const {
@@ -65,8 +66,11 @@ const EditProfile = () => {
   return (
     <section className="container">
       <form className="profileForm" onSubmit={(e) => onSubmit(e)}>
-        <h1 style={{ fontSize: "30px" }}>Setup Your Profile</h1>
+        <h1 style={{ fontSize: "30px" }}>Edit your profile</h1>
         <p className="text">Make it personal. Make it stand out.</p>
+        <small className="smallDesc">
+          <em>* = required fields</em>
+        </small>
         <div className="create-profile-input">
           <small className="smallDesc">
             <em>Talk about yourself</em>
@@ -85,9 +89,10 @@ const EditProfile = () => {
           </small>
           <input
             type="text"
-            placeholder="Status"
+            placeholder="Status *"
             name="status"
             value={status}
+            required
             onChange={(e) => onChange(e)}
           />
         </div>

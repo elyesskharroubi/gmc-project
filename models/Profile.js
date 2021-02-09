@@ -8,9 +8,7 @@ const ProfileSchema = new mongoose.Schema({
   company: {
     type: String,
   },
-  website: {
-    type: String,
-  },
+
   status: {
     type: String,
     required: true,
@@ -61,10 +59,6 @@ const ProfileSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-      fieldofstudy: {
-        type: String,
-        required: true,
-      },
       from: {
         type: Date,
         required: true,
@@ -95,6 +89,9 @@ const ProfileSchema = new mongoose.Schema({
       type: String,
     },
     instagram: {
+      type: String,
+    },
+    website: {
       type: String,
     },
   },

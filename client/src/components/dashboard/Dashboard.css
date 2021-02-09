@@ -5,7 +5,7 @@
   flex-direction: column;
   padding: 20px;
   background-color: #1d1d1d;
-  /* width: fit-content; */
+  min-width: 250px;
   /* margin: 0 auto; */
   border-radius: 6px;
 }
@@ -30,20 +30,23 @@
   margin-left: 10px;
 }
 
+.dash-icons {
+  display: none;
+}
+
 .userName {
   font-weight: 700;
   font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.user,
-.userName {
+.user {
   margin-bottom: 20px;
+  text-align: center;
 }
 
-.social {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
+.socialLink {
+  margin: 0 3px;
 }
 
 .socialLink:hover {
@@ -69,7 +72,8 @@
   width: 40%;
 }
 
-.create-profile-input input {
+.create-profile-input input,
+.create-profile-input textarea {
   padding: 10px;
   outline: none;
   margin: 5px 0;
@@ -79,7 +83,12 @@
   color: #eee;
 }
 
-.create-profile-input input:focus {
+.create-profile-input textarea {
+  font-family: "Raleway", sans-serif;
+}
+
+.create-profile-input input:focus,
+.create-profile-input textarea:focus {
   border: 1px solid #8b8b8b;
 }
 
@@ -87,10 +96,24 @@
   .create-profile-input {
     width: 60%;
   }
+
+  .dashContent {
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 768px) {
   .create-profile-input {
     width: 90%;
+  }
+
+  .dash-btns-text {
+    display: none;
+  }
+  .dash-icons {
+    display: block;
+  }
+  .dash-buttons {
+    display: flex;
   }
 }
 

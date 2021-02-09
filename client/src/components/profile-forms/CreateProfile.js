@@ -68,6 +68,7 @@ const CreateProfile = () => {
             placeholder="Status"
             name="status"
             value={status}
+            required
             onChange={(e) => onChange(e)}
           />
         </div>
