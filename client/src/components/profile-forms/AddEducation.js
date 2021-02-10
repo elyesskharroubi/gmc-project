@@ -28,11 +28,8 @@ const AddEducation = () => {
   return (
     <section className="container">
       <form className="profileForm" onSubmit={(e) => onSubmit(e)}>
-        <h1 style={{ fontSize: "30px" }}>Add an Experience</h1>
-        <p className="text">
-          Add any design / marketing related experience that you have had in the
-          past.
-        </p>
+        <h1 style={{ fontSize: "30px" }}>Add an Education</h1>
+        <p className="text">Add any education that you have had in the past.</p>
         <small className="smallDesc">
           <em>* = required fields</em>
         </small>
@@ -51,7 +48,7 @@ const AddEducation = () => {
         </div>
         <div className="create-profile-input">
           <small className="smallDesc">
-            <em>Name of the Company</em>
+            <em>Degree / Diploma</em>
           </small>
           <input
             type="text"

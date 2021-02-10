@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getCurrentProfile } from "../../actions/profile";
 import DashboardActions from "./DashboardActions";
+import Experience from "./Experience";
+import Education from "./Education";
 
 import SocialLinks from "./SocialLinks";
 import "./Dashboard.css";
@@ -57,6 +59,8 @@ const Dashboard = () => {
                 </div>
                 <div className="dashboard-content">
                   <DashboardActions />
+                  <Experience />
+                  <Education />
                 </div>
               </div>
             ) : (
