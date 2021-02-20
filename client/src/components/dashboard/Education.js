@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Moment from "react-moment";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteEducation } from "../../actions/profile";

@@ -5,8 +5,8 @@ import { getCurrentProfile } from "../../actions/profile";
 import DashboardActions from "./DashboardActions";
 import Experience from "./Experience";
 import Education from "./Education";
+import ProfileInfo from "./ProfileInfo";
 
-import SocialLinks from "./SocialLinks";
 import "./Dashboard.css";
 
 import Spinner from "../layout/Spinner";
@@ -33,30 +33,7 @@ const Dashboard = () => {
           <div className="dashboardContainer">
             {profile !== null ? (
               <div className="dashContent">
-                <div className="profileInfo">
-                  <img
-                    src={user && user.avatar}
-                    alt="Avatar"
-                    style={{
-                      width: "60px",
-                      borderRadius: "50%",
-                      border: "2px solid #eee",
-                      marginBottom: "25px",
-                    }}
-                  />
-                  <p className="userName">
-                    {user && user.firstName} {user && user.lastName}
-                  </p>
-                  <p className="user">{profile.status}</p>
-
-                  {profile && <p className="user">{profile.bio}</p>}
-                  {profile && <p className="user">{profile.company}</p>}
-                  {profile && <p className="user">{profile.location}</p>}
-
-                  <div className="social">
-                    <SocialLinks profile={profile} />
-                  </div>
-                </div>
+                <ProfileInfo profile={profile} user={user} />
                 <div className="dashboard-content">
                   <DashboardActions />
                   <Experience />
