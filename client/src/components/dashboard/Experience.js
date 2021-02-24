@@ -14,12 +14,8 @@ const Experience = () => {
       <li>{exp.company}</li>
       <li>{exp.location}</li>
       <li>
-        <Moment format="DD/MM/YYYY">{exp.from}</Moment> -{" "}
-        {exp.to === null ? (
-          " Now"
-        ) : (
-          <Moment format="DD/MM/YYYY">{exp.to}</Moment>
-        )}
+        <Moment format="MM/YYYY">{exp.from}</Moment> -{" "}
+        {exp.to === null ? " Now" : <Moment format="MM/YYYY">{exp.to}</Moment>}
       </li>
       <li>
         <button
@@ -34,7 +30,7 @@ const Experience = () => {
 
   return (
     <>
-      <h1 style={{ marginTop: "33px" }}>EXPERIENCE</h1>
+      <h1 style={{ fontSize: "18px", marginTop: "53px" }}>EXPERIENCE</h1>
       <hr />
       {experience.length > 0 ? (
         <ul>{exps}</ul>

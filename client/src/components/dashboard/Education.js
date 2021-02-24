@@ -12,14 +12,12 @@ const Education = () => {
     <div key={edu._id} className="listItem">
       <li>{edu.school}</li>
       <li>{edu.degree}</li>
-      <li>{edu.location}</li>
       <li>
-        <Moment format="DD/MM/YYYY">{edu.from}</Moment> -{" "}
-        {edu.to === null ? (
-          " Now"
-        ) : (
-          <Moment format="DD/MM/YYYY">{edu.to}</Moment>
-        )}
+        <span></span>
+      </li>
+      <li>
+        <Moment format="MM/YYYY">{edu.from}</Moment> -{" "}
+        {edu.to === null ? " Now" : <Moment format="MM/YYYY">{edu.to}</Moment>}
       </li>
       <li>
         <button
@@ -34,7 +32,7 @@ const Education = () => {
 
   return (
     <>
-      <h1 style={{ marginTop: "25px" }}>EDUCATION</h1>
+      <h1 style={{ fontSize: "18px", marginTop: "25px" }}>EDUCATION</h1>
       <hr />
       {education.length > 0 ? (
         <ul>{edus}</ul>
