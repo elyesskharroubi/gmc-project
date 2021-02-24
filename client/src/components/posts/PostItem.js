@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./Posts.css";
 import Moment from "react-moment";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
-import { addLike, removeLike } from "../../actions/post";
+import { addLike, removeLike, deletePost } from "../../actions/post";
 
 import trashAsset from "../../img/assets/trash.svg";
 import likeAsset from "../../img/assets/like.svg";
@@ -27,7 +27,11 @@ const PostItem = ({
           </p>
         </div>
         {!auth.loading && user === auth.user._id && (
-          <button className="del-post-btn">
+          <button
+            className="del-post-btn"
+            onClick={(e) => dispatch(deletePost(_id))}
+            type="button"
+          >
             <div className="del-post-btn-inner">
               <img
                 src={trashAsset}
@@ -44,13 +48,18 @@ const PostItem = ({
       <hr />
       <div className="post-footer">
         <div className="dynamic">
-          <button className="post-box" onClick={(e) => dispatch(addLike(_id))}>
+          <button
+            className="post-box"
+            onClick={(e) => dispatch(addLike(_id))}
+            type="button"
+          >
             <img src={likeAsset} alt="like icon" className="post-icons" />
             {likes.length > 0 && <span>{likes.length}</span>}
           </button>
           <button
             className="post-box"
             onClick={(e) => dispatch(removeLike(_id))}
+            type="button"
           >
             <img src={dislikeAsset} alt="dislike icon" className="post-icons" />
           </button>
