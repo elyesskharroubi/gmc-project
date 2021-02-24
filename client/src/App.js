@@ -17,6 +17,7 @@ import EditProfile from "./components/profile-forms/EditProfile";
 import AddExperience from "./components/profile-forms/AddExperience";
 import AddEducation from "./components/profile-forms/AddEducation";
 import ProfilesList from "./components/profiles/ProfilesList";
+import Posts from "./components/posts/Posts";
 
 import setAuthToken from "./utils/setAuthToken";
 import store from "./store";
@@ -53,6 +54,7 @@ const App = () => {
             component={AddExperience}
           />
           <PrivateRoute exact path="/add-education" component={AddEducation} />
+          <PrivateRoute exact path="/posts" component={Posts} />
         </Switch>
       </Fragment>
     </Router>

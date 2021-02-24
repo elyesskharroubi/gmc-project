@@ -125,6 +125,9 @@
   .create-profile-input {
     width: 60%;
   }
+  .profilesItem {
+    flex-basis: 100%;
+  }
 
   .profilesList {
     flex-wrap: wrap;
@@ -211,6 +214,9 @@ hr {
 @media screen and (max-width: 768px) {
   .delBtn-inner {
     width: 68px;
+  }
+  .listItem li {
+    font-size: 12px;
   }
 }
 

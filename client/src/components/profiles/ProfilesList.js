@@ -26,7 +26,7 @@ const ProfilesList = () => {
             Connect with other creatives around the world.
           </p>
           <div className="profilesList">
-            {profiles.length > 0 ? (
+            {!loading && profiles.length > 0 ? (
               profiles.map((profile) => (
                 <ProfilesItem
                   key={profile._id}

@@ -52,13 +52,18 @@ const Navbar = () => {
   const authLinks = (
     <ul>
       <li className={nav ? "li-active" : ""}>
-        <Link className="nav-links" to="/community" onClick={handleChange}>
-          Community
+        <Link className="nav-links" to="/dashboard" onClick={handleChange}>
+          Dashboard
         </Link>
       </li>
       <li className={nav ? "li-active" : ""}>
-        <Link className="nav-links" to="/dashboard" onClick={handleChange}>
-          Dashboard
+        <Link className="nav-links" to="/posts" onClick={handleChange}>
+          Posts
+        </Link>
+      </li>
+      <li className={nav ? "li-active" : ""}>
+        <Link className="nav-links" to="/community" onClick={handleChange}>
+          Community
         </Link>
       </li>
       <li className={nav ? "li-active" : ""}>

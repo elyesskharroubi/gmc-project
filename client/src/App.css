@@ -24,12 +24,6 @@ body {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
-}
-
 .primaryBtn {
   background-color: #3b3b3b;
   color: #fff;
@@ -51,7 +45,17 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+
+.dash-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
   .dash {
     width: 90%;
   }
@@ -66,8 +70,3 @@ body {
   }
 }
 
-.dash-title {
-  margin-bottom: 20px;
-  font-size: 24px;
-  text-transform: uppercase;
-}
