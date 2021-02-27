@@ -88,6 +88,7 @@
   outline: none;
   border-style: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .post-icons {
@@ -95,11 +96,17 @@
   margin-right: 7px;
   opacity: 0.5;
   transition: all 150ms ease-in-out;
-  cursor: pointer;
 }
 
-.post-icons:hover {
+.post-box:hover > .post-icons {
   opacity: 1;
+}
+
+.post-date {
+  font-size: 12px;
+  font-style: italic;
+  opacity: 0.6;
+  text-align: right;
 }
 
 @media screen and (max-width: 768px) {
@@ -108,5 +115,8 @@
   }
   .del-post-icon {
     margin-right: 0;
+  }
+  .comment-txt {
+    display: none;
   }
 }

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./Posts.css";
 import Moment from "react-moment";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { addLike, removeLike, deletePost } from "../../actions/post";
@@ -13,6 +13,7 @@ import commentAsset from "../../img/assets/comment.svg";
 
 const PostItem = ({
   post: { _id, text, firstName, lastName, avatar, user, likes, comments, date },
+  showActions,
 }) => {
   const dispatch = useDispatch();
   const auth = useSelector((state) => state.auth);
@@ -48,32 +49,55 @@ const PostItem = ({
       <hr />
       <div className="post-footer">
         <div className="dynamic">
-          <button
-            className="post-box"
-            onClick={(e) => dispatch(addLike(_id))}
-            type="button"
-          >
-            <img src={likeAsset} alt="like icon" className="post-icons" />
-            {likes.length > 0 && <span>{likes.length}</span>}
-          </button>
-          <button
-            className="post-box"
-            onClick={(e) => dispatch(removeLike(_id))}
-            type="button"
-          >
-            <img src={dislikeAsset} alt="dislike icon" className="post-icons" />
-          </button>
-          <button className="post-box">
-            <img src={commentAsset} alt="comment icon" className="post-icons" />
-            {comments.length > 0 && <span>{comments.length}</span>}
-          </button>
+          {showActions && (
+            <Fragment>
+              <button
+                className="post-box"
+                onClick={(e) => dispatch(addLike(_id))}
+                type="button"
+              >
+                <img src={likeAsset} alt="like icon" className="post-icons" />
+                {likes.length > 0 && <span>{likes.length}</span>}
+              </button>
+              <button
+                className="post-box"
+                onClick={(e) => dispatch(removeLike(_id))}
+                type="button"
+              >
+                <img
+                  src={dislikeAsset}
+                  alt="dislike icon"
+                  className="post-icons"
+                />
+              </button>
+              <Link to={`/post/${_id}`} style={{ textDecoration: "none" }}>
+                <button className="post-box">
+                  <img
+                    src={commentAsset}
+                    alt="comment icon"
+                    className="post-icons"
+                  />
+                  {
+                    <span>
+                      <span className="comment-txt">Comments</span>{" "}
+                      {comments.length}
+                    </span>
+                  }
+                </button>
+              </Link>
+            </Fragment>
+          )}
         </div>
-        <p className="user-fullname">
+        <p className="post-date">
           Posted on <Moment format="DD/MM/YYYY">{date}</Moment>
         </p>
       </div>
     </div>
   );
+};
+
+PostItem.defaultProps = {
+  showActions: true,
 };
 
 export default PostItem;
