@@ -14,6 +14,7 @@ const Post = () => {
   const { post, loading } = postState;
   useEffect(() => {
     dispatch(getPost(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return loading || post === null ? (
     <Spinner />

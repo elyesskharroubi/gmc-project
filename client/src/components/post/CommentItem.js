@@ -1,9 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Moment } from "react-moment";
+import Moment from "react-moment";
 import { deleteComment } from "../../actions/post";
 
 import trashAsset from "../../img/assets/trash.svg";
+
+import "../posts/Posts.css";
 
 const CommentItem = ({
   postId,
