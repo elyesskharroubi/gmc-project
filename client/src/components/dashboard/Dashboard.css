@@ -1,0 +1,225 @@
+.profileInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #1d1d1d;
+  width: 33.33333%;
+  border-radius: 6px;
+}
+
+.dashContent {
+  display: flex;
+  gap: 20px;
+}
+
+.dashboard-content {
+  padding: 20px;
+  background-color: #1d1d1d;
+  border-radius: 6px;
+  flex: 2;
+}
+
+.dash-buttons {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+.dash-buttons a {
+  margin-left: 10px;
+}
+
+.dash-icons {
+  display: none;
+}
+
+.userName {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.user {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.socialLink {
+  margin: 0 3px;
+}
+
+.socialLink:hover {
+  opacity: 0.8;
+}
+
+.smallDesc {
+  opacity: 0.5;
+  font-size: 10;
+}
+
+.profileForm {
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  align-items: center;
+}
+
+.create-profile-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  width: 40%;
+}
+
+.create-profile-input input,
+.create-profile-input textarea {
+  padding: 10px;
+  outline: none;
+  margin: 5px 0;
+  background-color: #3d3d3d;
+  border-radius: 6px;
+  border: 1px solid #242424;
+  color: #eee;
+}
+
+.create-profile-input textarea {
+  font-family: "Raleway", sans-serif;
+}
+
+.create-profile-input input:focus,
+.create-profile-input textarea:focus {
+  border: 1px solid #8b8b8b;
+}
+
+.profilesList {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  /* align-items: stretch; */
+  flex-flow: wrap;
+  gap: 10px;
+}
+
+.profilesItem {
+  flex-basis: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #1d1d1d;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.communityItem {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+  .profileInfo {
+    width: 100%;
+  }
+  .create-profile-input {
+    width: 60%;
+  }
+  .profilesItem {
+    flex-basis: 100%;
+  }
+
+  .profilesList {
+    flex-wrap: wrap;
+  }
+  .dashContent {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+  .create-profile-input {
+    width: 90%;
+  }
+
+  .dash-btns-text {
+    display: none;
+  }
+  .dash-icons {
+    display: block;
+  }
+  .dash-buttons {
+    display: flex;
+  }
+}
+
+/* .dashContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+.listItem {
+  display: grid;
+  grid-template-columns: 23.75% 23.75% 23.75% 23.75% 5%;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.listItem li {
+  list-style: none;
+  font-size: 14px;
+}
+
+.deleteBtn {
+  padding: 4px;
+  border-radius: 25px;
+  width: 23px;
+  background-color: #da172e;
+  color: #fff;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-weight: 700;
+  float: right;
+}
+
+.deleteBtn:hover {
+  background-color: #ff344c;
+}
+hr {
+  opacity: 0.2;
+}
+
+.delAccBtn {
+  padding: 7px 8px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: #5c3035;
+  color: #fff;
+  transition: all 150ms ease-in-out;
+  vertical-align: baseline;
+}
+
+.delBtn-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 132px;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 768px) {
+  .delBtn-inner {
+    width: 68px;
+  }
+  .listItem li {
+    font-size: 12px;
+  }
+}
+
+.delAccBtn:hover {
+  background-color: #bb2a3b;
+}

@@ -1,0 +1,145 @@
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.inputs {
+  width: 40%;
+  position: relative;
+  height: 50px;
+  margin: 5px 0;
+  overflow: hidden;
+}
+
+.login-inputs {
+  margin: 10px 0;
+}
+
+.inputs input {
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  color: #e2e2e2;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.content-label {
+  position: absolute;
+  bottom: 0px;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid #b1b1b1;
+}
+
+.content-label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  border-bottom: 2px solid #80ffdb;
+  transform: translateX(-100%);
+  transition: transform 250ms ease-in-out;
+}
+
+.content-name {
+  position: absolute;
+  color: #cfcece;
+  bottom: 5px;
+  left: 0px;
+  transition: all 250ms ease-in-out;
+}
+
+.inputs input:focus + .content-label .content-name,
+.inputs input:valid + .content-label .content-name {
+  transform: translateY(-150%);
+  font-size: 12px;
+  color: #80ffdb;
+}
+
+.inputs input:focus + .content-label::after,
+.inputs input:valid + .content-label::after {
+  transform: translateX(0%);
+}
+
+.register-btn {
+  font-size: 18px;
+  width: 40%;
+  height: 40px;
+  background: none;
+  color: #28c296;
+  border: 1px solid #28c296;
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+  outline: none;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.register-btn:hover {
+  color: #80ffdb;
+  border: 1px solid #80ffdb;
+}
+
+.register-btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(195, 255, 237, 0.4),
+    transparent
+  );
+  transition: all 500ms;
+}
+.register-btn:hover:before {
+  left: 100%;
+}
+
+.text {
+  font-size: 14px;
+  margin: 10px;
+  color: #b1b1b1;
+}
+
+.text a {
+  text-decoration: none;
+  font-style: italic;
+  color: #28c296;
+}
+
+.text a:hover {
+  text-decoration: underline;
+  color: #80ffdb;
+}
+
+@media screen and (max-width: 1024px) {
+  .inputs,
+  .register-btn {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .inputs,
+  .register-btn {
+    width: 90%;
+  }
+  .text {
+    text-align: center;
+  }
+}
